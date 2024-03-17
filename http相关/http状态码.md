@@ -1,0 +1,17 @@
+- 30x
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**301 Moved Permanently**&nbsp;&nbsp;</font> 永久重定向
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**302 Found**&nbsp;&nbsp;</font> 临时重定向
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**303 See Other**&nbsp;&nbsp;</font> 临时重定向
+    - 301 永久重定向指的是原来访问的资源已经被永久删除了，后续的访问应该走 <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**Location**&nbsp;&nbsp;</font> 的重定向的url
+    - 301 在搜索引擎抓取内容的时候，会把旧的url替换为新的url
+    - 临时重定向指的是暂时用 Location 里的url访问，但是资源还在，后续可能就不需要重定向了
+    - 临时重定向抓取新的url的时候也会保存旧的url
+    - 302 303 都是处理临时重定向的，302 是 http1.0 的内容，303 是http1.1 的内容，
+    - 302 的响应可以支持缓存，303 的响应是不允许缓存的。
+    - 303 总是需要单独的 GET 请求重新请求资源。
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**304 Not Modified**&nbsp;&nbsp;</font> 请求的资源未修改，一般用于缓存内容的状态码
+- 40x
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**400 Bad Request**&nbsp;&nbsp;</font> 错误请求，服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**401 Unauthorized**&nbsp;&nbsp;</font> 请求未授权，身份验证未通过
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**403 Forbidden**&nbsp;&nbsp;</font> 禁止访问，请求通过了身份验证，但是无法对给定资源执行请求的操作
+  - <font style="color: red; background:#FFF5F5">&nbsp;&nbsp;**404 Not Found**&nbsp;&nbsp;</font> 找不到如何与 `URI` 相匹配的资源

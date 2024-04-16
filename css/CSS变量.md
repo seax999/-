@@ -10,6 +10,7 @@
 
 ```css
 <style>
+	/** css3 新增属性 :root */
     :root {
         --main-theme: #ccc;
     }
